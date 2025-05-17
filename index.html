@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="theme-color" content="#FF9E00">
 </head>
+
 <body>
     <header>
         <h1>शिवम का मज़ेदार संसार <i class="fas fa-star"></i></h1>
@@ -19,7 +21,7 @@
             <div class="balloon" style="--color: #FF33FB"></div>
         </div>
     </header>
-    
+
     <nav class="main-nav">
         <button class="tab-btn active" onclick="openTab('home')"><i class="fas fa-home"></i> होम</button>
         <button class="tab-btn" onclick="openTab('water')"><i class="fas fa-tint"></i> जल का महत्व</button>
@@ -36,10 +38,13 @@
             <div class="character">
                 <img src="883f138b-dc24-400b-b8e0-1e49163019a2.jpeg" alt="शिवम" class="avatar">
             </div>
-            <p class="personal-message">शिवम, इस मज़ेदार वेबसाइट पर आपका स्वागत है! यहाँ आप हिंदी भाषा के बारे में खेल-खेल में सीख सकते हैं!</p>
+            <p class="personal-message">शिवम, इस मज़ेदार वेबसाइट पर आपका स्वागत है! यहाँ आप हिंदी भाषा के बारे में
+                खेल-खेल में सीख सकते हैं!</p>
             <div class="buttons">
-                <button class="fancy-btn" onclick="openTab('water')"><i class="fas fa-tint"></i> जल के बारे में जानें</button>
-                <button class="fancy-btn" onclick="openTab('opposites')"><i class="fas fa-gamepad"></i> विलोम शब्द का खेल</button>
+                <button class="fancy-btn" onclick="openTab('water')"><i class="fas fa-tint"></i> जल के बारे में
+                    जानें</button>
+                <button class="fancy-btn" onclick="openTab('opposites')"><i class="fas fa-gamepad"></i> विलोम शब्द का
+                    खेल</button>
             </div>
         </div>
     </section>
@@ -65,7 +70,8 @@
                     <div class="tip hidden">पौधों को सुबह या शाम को पानी दें</div>
                     <div class="tip hidden">पानी के रिसाव को तुरंत ठीक करें</div>
                 </div>
-                <button class="action-btn" onclick="showMoreTips()"><i class="fas fa-plus-circle"></i> और टिप्स देखें</button>
+                <button class="action-btn" onclick="showMoreTips()"><i class="fas fa-plus-circle"></i> और टिप्स
+                    देखें</button>
             </div>
         </div>
     </section>
@@ -95,7 +101,8 @@
                         <div class="toy-option">रोबोट</div>
                         <div class="toy-option">क्रिकेट बैट</div>
                     </div>
-                    <button id="borrowBtn" class="action-btn" disabled><i class="fas fa-hand-holding"></i> उधार लें</button>
+                    <button id="borrowBtn" class="action-btn" disabled><i class="fas fa-hand-holding"></i> उधार
+                        लें</button>
                     <div id="borrowMessage"></div>
                 </div>
             </div>
@@ -158,7 +165,8 @@
                 <div class="game-board">
                     <div id="singular-display">एकवचन: लड़का</div>
                     <input type="text" id="plural-input" placeholder="बहुवचन यहाँ लिखें...">
-                    <button onclick="checkPlural()" class="action-btn"><i class="fas fa-check-circle"></i> जांचें</button>
+                    <button onclick="checkPlural()" class="action-btn"><i class="fas fa-check-circle"></i>
+                        जांचें</button>
                     <div id="plural-result"></div>
                 </div>
             </div>
@@ -217,28 +225,35 @@
                         <label for="endDate">छुट्टी की अंतिम तारीख:</label>
                         <input type="date" id="endDate">
                     </div>
-                    <button onclick="generateLetter()" class="action-btn letter-btn"><i class="fas fa-magic"></i> पत्र तैयार करें</button>
+                    <button onclick="generateLetter()" class="action-btn letter-btn"><i class="fas fa-magic"></i> पत्र
+                        तैयार करें</button>
                 </div>
                 <div class="letter-output" id="letterOutput">
                     <p>सेवा में,<br>
-                    प्रधानाचार्य जी,<br>
-                    <span id="outputSchoolName">[स्कूल का नाम]</span><br>
-                    [स्कूल का पता]</p>
+                        प्रधानाचार्य जी,<br>
+                        <span id="outputSchoolName">[स्कूल का नाम]</span><br>
+                        [स्कूल का पता]
+                    </p>
 
                     <p>दिनांक: 17 मई, 2025</p>
-
+                    <br>
                     <p><strong>विषय: तीन दिन के अवकाश हेतु प्रार्थना पत्र</strong></p>
-
+                    <br>
                     <p>महोदय/महोदया,</p>
-
-                    <p>सविनय निवेदन है कि मैं, आपका विद्यार्थी रोहित, कक्षा <span id="outputClass">[आपकी कक्षा]</span> का छात्र हूँ। मुझे पिछले रात से तेज बुखार और शरीर में दर्द महसूस हो रहा है। डॉक्टर ने मुझे तीन दिन तक आराम करने की सलाह दी है।</p>
-
-                    <p>अतः आपसे विनम्र प्रार्थना है कि मुझे दिनांक <span id="outputStartDate">[छुट्टी की पहली तारीख]</span> से <span id="outputEndDate">[छुट्टी की अंतिम तारीख]</span> तक तीन दिन का अवकाश प्रदान करने की कृपा करें। इसके लिए मैं आपका आभारी रहूँगा।</p>
-
+                    <br>
+                    <p>सविनय निवेदन है कि मैं, आपका विद्यार्थी रोहित, कक्षा <span id="outputClass">[आपकी कक्षा]</span>
+                        का छात्र हूँ। मुझे पिछले रात से तेज बुखार और शरीर में दर्द महसूस हो रहा है। डॉक्टर ने मुझे तीन
+                        दिन तक आराम करने की सलाह दी है।</p>
+                    <br>
+                    <p>अतः आपसे विनम्र प्रार्थना है कि मुझे दिनांक <span id="outputStartDate">[छुट्टी की पहली
+                            तारीख]</span> से <span id="outputEndDate">[छुट्टी की अंतिम तारीख]</span> तक तीन दिन का अवकाश
+                        प्रदान करने की कृपा करें। इसके लिए मैं आपका आभारी रहूँगा।</p>
+                    <br>
+                    <p>धन्यवाद।</p>
                     <p>आपका आज्ञाकारी छात्र,<br>
-                    रोहित<br>
-                    कक्षा: <span id="outputClass2">[आपकी कक्षा]</span><br>
-                    अनुक्रमांक: <span id="outputRollNumber">[आपका रोल नंबर]</span></p>
+                        रोहित<br>
+                        कक्षा: <span id="outputClass2">[आपकी कक्षा]</span><br>
+                        अनुक्रमांक: <span id="outputRollNumber">[आपका रोल नंबर]</span></p>
                 </div>
             </div>
         </div>
@@ -250,4 +265,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
