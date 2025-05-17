@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शिवम के लिए मज़ेदार साइट</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="theme-color" content="#FF9E00">
+</head>
+<body>
+    <header>
+        <h1>शिवम का मज़ेदार संसार <i class="fas fa-star"></i></h1>
+        <div class="balloon-container">
+            <div class="balloon" style="--color: #FF5733"></div>
+            <div class="balloon" style="--color: #33FF57"></div>
+            <div class="balloon" style="--color: #3357FF"></div>
+            <div class="balloon" style="--color: #FF33FB"></div>
+        </div>
+    </header>
+    
+    <nav class="main-nav">
+        <button class="tab-btn active" onclick="openTab('home')"><i class="fas fa-home"></i> होम</button>
+        <button class="tab-btn" onclick="openTab('water')"><i class="fas fa-tint"></i> जल का महत्व</button>
+        <button class="tab-btn" onclick="openTab('toyLibrary')"><i class="fas fa-gamepad"></i> खिलौना</button>
+        <button class="tab-btn" onclick="openTab('opposites')"><i class="fas fa-exchange-alt"></i> विलोम</button>
+        <button class="tab-btn" onclick="openTab('plurals')"><i class="fas fa-clone"></i> वचन</button>
+        <button class="tab-btn" onclick="openTab('letter')"><i class="fas fa-envelope"></i> पत्र</button>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="tab-content active">
+        <div class="welcome-container">
+            <h2>Hello शिवम! <span class="wave">👋</span></h2>
+            <div class="character">
+                <img src="883f138b-dc24-400b-b8e0-1e49163019a2.jpeg" alt="शिवम" class="avatar">
+            </div>
+            <p class="personal-message">शिवम, इस मज़ेदार वेबसाइट पर आपका स्वागत है! यहाँ आप हिंदी भाषा के बारे में खेल-खेल में सीख सकते हैं!</p>
+            <div class="buttons">
+                <button class="fancy-btn" onclick="openTab('water')"><i class="fas fa-tint"></i> जल के बारे में जानें</button>
+                <button class="fancy-btn" onclick="openTab('opposites')"><i class="fas fa-gamepad"></i> विलोम शब्द का खेल</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Water Importance Section -->
+    <section id="water" class="tab-content">
+        <h2><i class="fas fa-tint"></i> जल का जीवन में महत्व</h2>
+        <div class="content-box">
+            <div class="water-animation"></div>
+            <ol>
+                <li>जल हमारे जीवन का आधार है, इसके बिना जीवन संभव नहीं है।</li>
+                <li>यह पीने, भोजन बनाने, और सफाई के लिए अति आवश्यक है।</li>
+                <li>कृषि और उद्योग भी जल पर ही निर्भर करते हैं।</li>
+                <li>जल नदियों, झीलों और समुद्रों में प्रकृति का अनमोल तोहफा है।</li>
+                <li>हमें जल का संरक्षण करना चाहिए ताकि यह भविष्य के लिए सुरक्षित रहे।</li>
+            </ol>
+            <div class="interactive-element">
+                <h3>पानी बचाने के तरीके</h3>
+                <div id="waterSavingTips" class="interactive-list">
+                    <div class="tip">नहाते समय शॉवर का उपयोग करें</div>
+                    <div class="tip">बर्तन धोते समय नल बंद रखें</div>
+                    <div class="tip">पानी का रीसाइकल करें</div>
+                    <div class="tip hidden">पौधों को सुबह या शाम को पानी दें</div>
+                    <div class="tip hidden">पानी के रिसाव को तुरंत ठीक करें</div>
+                </div>
+                <button class="action-btn" onclick="showMoreTips()"><i class="fas fa-plus-circle"></i> और टिप्स देखें</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toy Library Section -->
+    <section id="toyLibrary" class="tab-content">
+        <h2>खिलौना पुस्तकालय</h2>
+        <div class="content-box">
+            <div class="toy-images">
+                <div class="toy" onclick="selectToy(this)"></div>
+                <div class="toy" onclick="selectToy(this)"></div>
+                <div class="toy" onclick="selectToy(this)"></div>
+            </div>
+            <ol>
+                <li>खिलौना पुस्तकालय एक अनोखी जगह है जहां बच्चे खेलने के लिए खिलौने उधार ले सकते हैं।</li>
+                <li>यह बच्चों को नए-नए खिलौनों का अनुभव करने का मौका देता है।</li>
+                <li>इससे खिलौनों की बर्बादी कम होती है और resources का सही उपयोग होता है।</li>
+                <li>यह बच्चों में मिल-बांटकर खेलने और जिम्मेदारी की भावना को बढ़ावा देता है।</li>
+                <li>खिलौना पुस्तकालय बच्चों के लिए सीखने और मनोरंजन का एक अच्छा माध्यम है।</li>
+            </ol>
+            <div class="toy-borrowing">
+                <h3>शिवम के लिए खिलौना उधार</h3>
+                <div class="toy-selection">
+                    <span>अपना पसंदीदा खिलौना चुनें:</span>
+                    <div id="toySelection" class="toy-options">
+                        <div class="toy-option">कार</div>
+                        <div class="toy-option">रोबोट</div>
+                        <div class="toy-option">क्रिकेट बैट</div>
+                    </div>
+                    <button id="borrowBtn" class="action-btn" disabled><i class="fas fa-hand-holding"></i> उधार लें</button>
+                    <div id="borrowMessage"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opposites Section -->
+    <section id="opposites" class="tab-content">
+        <h2>विलोम शब्द (विपरीतार्थक शब्द)</h2>
+        <div class="content-box">
+            <div class="game-container">
+                <div class="game-board">
+                    <div id="word-display">शब्द: दिन</div>
+                    <div class="options">
+                        <button class="option-btn" onclick="checkAnswer(this, 'रात')">रात</button>
+                        <button class="option-btn" onclick="checkAnswer(this, 'सुबह')">सुबह</button>
+                        <button class="option-btn" onclick="checkAnswer(this, 'शाम')">शाम</button>
+                    </div>
+                    <div id="result"></div>
+                    <button id="next-btn" class="action-btn" onclick="nextQuestion()">
+                        <i class="fa fa-next"></i>
+                        अगला सवाल
+                    </button>
+                </div>
+            </div>
+            <div class="opposites-list">
+                <div class="opposites-column">
+                    <p>1. दिन - रात</p>
+                    <p>2. ऊपर - नीचे</p>
+                    <p>3. अंदर - बाहर</p>
+                    <p>4. छोटा - बड़ा</p>
+                    <p>5. सुख - दुख</p>
+                    <p>6. सत्य - असत्य</p>
+                    <p>7. प्रकाश - अंधकार</p>
+                    <p>8. तेज - धीरे</p>
+                    <p>9. गरम - ठंडा</p>
+                    <p>10. नया - पुराना</p>
+                </div>
+                <div class="opposites-column">
+                    <p>11. अमीर - गरीब</p>
+                    <p>12. सरल - कठिन</p>
+                    <p>13. भारी - हल्का</p>
+                    <p>14. आगे - पीछे</p>
+                    <p>15. जीत - हार</p>
+                    <p>16. प्यार - घृणा</p>
+                    <p>17. स्वस्थ - बीमार</p>
+                    <p>18. बुद्धिमान - मूर्ख</p>
+                    <p>19. शांति - अशांति</p>
+                    <p>20. जन्म - मृत्यु</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plurals Section -->
+    <section id="plurals" class="tab-content">
+        <h2>वचन बदलो</h2>
+        <div class="content-box">
+            <div class="game-container">
+                <div class="game-board">
+                    <div id="singular-display">एकवचन: लड़का</div>
+                    <input type="text" id="plural-input" placeholder="बहुवचन यहाँ लिखें...">
+                    <button onclick="checkPlural()" class="action-btn"><i class="fas fa-check-circle"></i> जांचें</button>
+                    <div id="plural-result"></div>
+                </div>
+            </div>
+            <div class="plurals-list">
+                <div class="plurals-column">
+                    <p>1. लड़का - लड़के</p>
+                    <p>2. पुस्तक - पुस्तकें</p>
+                    <p>3. नदी - नदियाँ</p>
+                    <p>4. घोड़ा - घोड़े</p>
+                    <p>5. कुर्सी - कुर्सियाँ</p>
+                    <p>6. कमरा - कमरे</p>
+                    <p>7. माला - मालाएँ</p>
+                    <p>8. चिड़िया - चिड़ियाँ</p>
+                    <p>9. बच्चा - बच्चे</p>
+                    <p>10. खिलौना - खिलौने</p>
+                </div>
+                <div class="plurals-column">
+                    <p>11. पत्ता - पत्ते</p>
+                    <p>12. कहानी - कहानियाँ</p>
+                    <p>13. बहन - बहनें</p>
+                    <p>14. रात - रातें</p>
+                    <p>15. तारा - तारे</p>
+                    <p>16. दरवाजा - दरवाजे</p>
+                    <p>17. कविता - कविताएँ</p>
+                    <p>18. रुपया - रुपये</p>
+                    <p>19. वस्तु - वस्तुएँ</p>
+                    <p>20. अध्यापक - अध्यापकगण</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leave Application Section -->
+    <section id="letter" class="tab-content">
+        <h2>प्रधानाचार्य जी को तीन दिन की छुट्टी के लिए प्रार्थना पत्र</h2>
+        <div class="content-box letter">
+            <div class="letter-container">
+                <div class="letter-form">
+                    <div class="form-group">
+                        <label for="schoolName">स्कूल का नाम:</label>
+                        <input type="text" id="schoolName" placeholder="स्कूल का नाम लिखें">
+                    </div>
+                    <div class="form-group">
+                        <label for="class">कक्षा:</label>
+                        <input type="text" id="class" placeholder="अपनी कक्षा लिखें">
+                    </div>
+                    <div class="form-group">
+                        <label for="rollNumber">अनुक्रमांक:</label>
+                        <input type="text" id="rollNumber" placeholder="अपना रोल नंबर लिखें">
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">छुट्टी की पहली तारीख:</label>
+                        <input type="date" id="startDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">छुट्टी की अंतिम तारीख:</label>
+                        <input type="date" id="endDate">
+                    </div>
+                    <button onclick="generateLetter()" class="action-btn letter-btn"><i class="fas fa-magic"></i> पत्र तैयार करें</button>
+                </div>
+                <div class="letter-output" id="letterOutput">
+                    <p>सेवा में,<br>
+                    प्रधानाचार्य जी,<br>
+                    <span id="outputSchoolName">[स्कूल का नाम]</span><br>
+                    [स्कूल का पता]</p>
+
+                    <p>दिनांक: 17 मई, 2025</p>
+
+                    <p><strong>विषय: तीन दिन के अवकाश हेतु प्रार्थना पत्र</strong></p>
+
+                    <p>महोदय/महोदया,</p>
+
+                    <p>सविनय निवेदन है कि मैं, आपका विद्यार्थी रोहित, कक्षा <span id="outputClass">[आपकी कक्षा]</span> का छात्र हूँ। मुझे पिछले रात से तेज बुखार और शरीर में दर्द महसूस हो रहा है। डॉक्टर ने मुझे तीन दिन तक आराम करने की सलाह दी है।</p>
+
+                    <p>अतः आपसे विनम्र प्रार्थना है कि मुझे दिनांक <span id="outputStartDate">[छुट्टी की पहली तारीख]</span> से <span id="outputEndDate">[छुट्टी की अंतिम तारीख]</span> तक तीन दिन का अवकाश प्रदान करने की कृपा करें। इसके लिए मैं आपका आभारी रहूँगा।</p>
+
+                    <p>आपका आज्ञाकारी छात्र,<br>
+                    रोहित<br>
+                    कक्षा: <span id="outputClass2">[आपकी कक्षा]</span><br>
+                    अनुक्रमांक: <span id="outputRollNumber">[आपका रोल नंबर]</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2023 शिवम का मज़ेदार संसार | सभी अधिकार सुरक्षित</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
