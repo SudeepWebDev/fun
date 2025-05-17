@@ -81,9 +81,9 @@
         <h2>खिलौना पुस्तकालय</h2>
         <div class="content-box">
             <div class="toy-images">
-                <div class="toy" onclick="selectToy(this)"></div>
-                <div class="toy" onclick="selectToy(this)"></div>
-                <div class="toy" onclick="selectToy(this)"></div>
+                <div class="toy" onclick="selectToy(this, 'कार')" title="कार (Car)"></div>
+                <div class="toy" onclick="selectToy(this, 'रोबोट')" title="रोबोट (Robot)"></div>
+                <div class="toy" onclick="selectToy(this, 'क्रिकेट बैट')" title="क्रिकेट बैट (Cricket Bat)"></div>
             </div>
             <ol>
                 <li>खिलौना पुस्तकालय एक अनोखी जगह है जहां बच्चे खेलने के लिए खिलौने उधार ले सकते हैं।</li>
@@ -97,13 +97,20 @@
                 <div class="toy-selection">
                     <span>अपना पसंदीदा खिलौना चुनें:</span>
                     <div id="toySelection" class="toy-options">
-                        <div class="toy-option">कार</div>
-                        <div class="toy-option">रोबोट</div>
-                        <div class="toy-option">क्रिकेट बैट</div>
+                        <div class="toy-option" onclick="selectToyOption(this, 'कार')">
+                            <i class="fas fa-car"></i> कार
+                        </div>
+                        <div class="toy-option" onclick="selectToyOption(this, 'रोबोट')">
+                            <i class="fas fa-robot"></i> रोबोट
+                        </div>
+                        <div class="toy-option" onclick="selectToyOption(this, 'क्रिकेट बैट')">
+                            <i class="fas fa-baseball-bat"></i> क्रिकेट बैट
+                        </div>
                     </div>
-                    <button id="borrowBtn" class="action-btn" disabled><i class="fas fa-hand-holding"></i> उधार
-                        लें</button>
-                    <div id="borrowMessage"></div>
+                    <button id="borrowBtn" class="action-btn borrow-btn" onclick="borrowToy()">
+                        <i class="fas fa-hand-holding"></i> उधार लें
+                    </button>
+                    <div id="borrowMessage" class="message-box"></div>
                 </div>
             </div>
         </div>
@@ -260,7 +267,7 @@
     </section>
 
     <footer>
-        <p>© 2023 शिवम का मज़ेदार संसार | सभी अधिकार सुरक्षित</p>
+        <p>© 2025 शिवम का मज़ेदार संसार | सभी अधिकार सुरक्षित</p>
     </footer>
 
     <script src="script.js"></script>

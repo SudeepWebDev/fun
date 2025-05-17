@@ -67,13 +67,12 @@ function showMoreTips() {
 // Toy library functionality
 let selectedToy = null;
 
+// Original toy selection function - keep if still needed
 function selectToy(toyElement) {
-    // Remove selected class from all toys
     document.querySelectorAll('.toy').forEach(toy => {
         toy.classList.remove('selected');
     });
     
-    // Add selected class to clicked toy
     toyElement.classList.add('selected');
     selectedToy = toyElement;
     
@@ -84,26 +83,54 @@ function selectToy(toyElement) {
     toyElement.style.animation = 'bounce 0.5s';
 }
 
-document.getElementById('borrowBtn').addEventListener('click', function() {
+// New function for selecting toy options
+function selectToyOption(element, toyName) {
+    // Remove selected class from all options
+    document.querySelectorAll('.toy-option').forEach(option => {
+        option.classList.remove('selected');
+    });
+    
+    // Add selected class to clicked option
+    element.classList.add('selected');
+    
+    // Store selected toy name
+    selectedToy = toyName;
+    
+    // Enable the borrow button
+    const borrowBtn = document.getElementById('borrowBtn');
+    borrowBtn.disabled = false;
+    
+    // Add a small animation to show it's active
+    borrowBtn.classList.add('pulse-animation');
+    setTimeout(() => borrowBtn.classList.remove('pulse-animation'), 500);
+}
+
+// Function to borrow toy
+function borrowToy() {
     if (selectedToy) {
         const message = document.getElementById('borrowMessage');
-        message.textContent = "शिवम, आपने सफलतापूर्वक खिलौना उधार लिया है! कृपया 7 दिनों में वापस करें।";
+        message.textContent = `शिवम, आपने सफलतापूर्वक "${selectedToy}" खिलौना उधार लिया है! कृपया 7 दिनों में वापस करें।`;
+        message.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
         message.style.color = 'green';
-        message.style.fontWeight = 'bold';
-        message.style.animation = 'fadeIn 0.5s';
+        message.style.padding = '10px';
+        message.style.borderRadius = '8px';
         
         // Show confetti effect
         createConfetti();
         
-        // Reset selection after 3 seconds
+        // Reset selection after 5 seconds
         setTimeout(() => {
-            selectedToy.classList.remove('selected');
+            document.querySelectorAll('.toy-option').forEach(option => {
+                option.classList.remove('selected');
+            });
             selectedToy = null;
-            this.disabled = true;
+            const borrowBtn = document.getElementById('borrowBtn');
+            borrowBtn.disabled = true;
             message.textContent = "";
+            message.style.backgroundColor = 'transparent';
         }, 5000);
     }
-});
+}
 
 // Simple confetti effect
 function createConfetti() {
@@ -127,13 +154,15 @@ function createConfetti() {
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.toy-option').forEach(option => {
         option.addEventListener('click', function() {
-            document.querySelectorAll('.toy-option').forEach(o => {
-                o.classList.remove('selected');
-            });
-            this.classList.add('selected');
-            document.getElementById('borrowBtn').disabled = false;
+            selectToyOption(this, this.textContent.trim());
         });
     });
+
+    // Initialize borrow button state
+    const borrowBtn = document.getElementById('borrowBtn');
+    if (borrowBtn) {
+        borrowBtn.disabled = true;
+    }
 });
 
 // Opposites game

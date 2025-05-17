@@ -298,6 +298,101 @@ section {
     background-color: rgba(255, 158, 0, 0.2);
 }
 
+.toy-borrowing {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.toy-selection {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.toy-selection span {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.toy-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 1.5rem 0;
+}
+
+.toy-option {
+    padding: 12px 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.toy-option i {
+    font-size: 1.2rem;
+}
+
+.toy-option:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.toy-option.selected {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 158, 0, 0.3);
+}
+
+.borrow-btn {
+    background: linear-gradient(45deg, #2196F3, #3f51b5);
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+
+.borrow-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(33, 150, 243, 0.3);
+}
+
+.borrow-btn:disabled {
+    background: linear-gradient(45deg, #9e9e9e, #757575);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+.borrow-btn i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+.message-box {
+    min-height: 50px;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
 /* Game Styles */
 .game-board {
     background-color: rgba(76, 175, 80, 0.1);
@@ -420,6 +515,97 @@ footer {
     margin-top: 2rem;
 }
 
+/* Toy Library Specific Styles */
+.toy-images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.toy {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: var(--shadow);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.toy::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.toy:nth-child(1) {
+    background: linear-gradient(135deg, #FF9E00, #FF6B00);
+}
+
+.toy:nth-child(1)::after {
+    content: "\f1b9";  /* car icon */
+}
+
+.toy:nth-child(2) {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+}
+
+.toy:nth-child(2)::after {
+    content: "\f544";  /* robot icon */
+}
+
+.toy:nth-child(3) {
+    background: linear-gradient(135deg, #FF5722, #D32F2F);
+}
+
+.toy:nth-child(3)::after {
+    content: "\f443";  /* cricket bat icon (using chess icon as substitute) */
+}
+
+.toy:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.toy.selected {
+    border: 3px solid #3498db;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(52, 152, 219, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); }
+}
+
+/* Confetti Animation */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color, #f00);
+    opacity: 0.7;
+    animation: confetti-fall 5s ease-out forwards;
+    z-index: 10;
+    pointer-events: none;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(300px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
     h1 {
@@ -452,7 +638,7 @@ footer {
     }
 
     .content-box {
-        padding: 1rem;
+        padding: 2rem;
     }
 
     .letter-container {
